@@ -2,12 +2,12 @@
 
 int main()
 {
-	char line[80];
+	char c;
 	FILE *fp = fopen(__FILE__, "r");
 
-	while (fgets(line, 80, fp) != NULL)
+	while ((c = fgetc(fp)) != EOF)
 	{
-		printf("%s", line);
+		putchar(c);
 	}
 	fclose(fp);
 	
