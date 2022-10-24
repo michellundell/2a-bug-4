@@ -9,7 +9,7 @@ int main()
 	printf("}\n"); 
 
 	FILE *fpointer;
-	char ch;
+	char ch[100];
 
 	fpointer = fopen(__FILE__, "r");
 
@@ -18,10 +18,9 @@ int main()
 		printf("File is empty!\n");
 	}
 
-	for(int i = 0; ch != EOF; i++)
+	while(fgets(ch, sizeof(ch), fpointer) != NULL)
 	{
-		ch = fgetc(fpointer);
-		printf("%c", ch);
+		printf("%s", ch);
 	}
 
 	if(feof(fpointer))
