@@ -2,7 +2,7 @@
 
 int main() 
 {
-	char c;
+	char c = '.';
 	FILE *fp = fopen(__FILE__, "r");
 	while (c != EOF)
 	{
