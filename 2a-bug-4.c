@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-
-int main() 
+int main()
 {
-	printf("#include <stdio.h>\n");
-	printf("int main()\n");
-	printf("{\n");
-        /* uuuhhh */
-	printf("}\n");
-	return(0);
+	char letter;
+	FILE *fp = fopen(__FILE__, "r");
+
+	while ((letter = fgetc(fp)) != EOF)
+	{
+		putchar(letter);
+	}
+	fclose(fp);
+	
+	return (0);
 }
